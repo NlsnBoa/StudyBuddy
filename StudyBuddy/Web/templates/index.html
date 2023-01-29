@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--meta name="description" content=""-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register for a Study Group or Host a Study Group</title>
+        <link rel="stylesheet" href="static/styles.css">
+        <script src="static/app.js"  defer></script>
+        <!-- Title of our website -->
+        <title>StudyBuddy@UCF</title>
+        <style>
+            /* ==================================================== */
+            /* Loader Styling */
+            .loader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #22333b;
+                transition: opacity 0.75s, visibility 0.75s;
+                z-index: 102;
+            }
+
+            .loader--hidden {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .loader::after {
+                content: "";
+                width: 75px;
+                height: 75px;
+                border: 10px solid #dddddd;
+                border-top-color: #FFB703;
+                border-radius: 50%;
+                animation: loading 0.75s ease infinite;
+            }
+
+            @keyframes loading {
+                from {transform: rotate(0turn)}
+                to {transform: rotate(1turn)}
+            }
+        </style>
+        <script>
+
+
+            window.addEventListener("load", () => {
+                document.querySelector(".loader").classList.add("loader--hidden");
+            })
+            
+
+        </script>
+    </head>
+    <body>
+        <div class="loader"></div>
+        <a name="home"></a>
+        <div class="progress-bar">
+            <div class="filled" id="myBar"></div>
+        </div>
+        <!-- NavBar -->
+        <div class="navbar">
+            <div class="container flex">
+                <!-- <h1 class="image-logo">
+                    <img src="./StudyBudLogo.png" class="img" >
+                </h1> -->
+                <h1 class="logo">StudyBuddy@UCF</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#aboutus">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+       
+
+        <!-- ShowCase -->
+        <section class="showcase">
+            <div class="container grid">
+                <div class="showcase-text">
+                    <h1>Find Your Team</h1>
+                    <p>Connect with like minded students at UCF using your Discord! Answer a couple of questions and
+                        you'll be put with a team right for you. Start studying with a team now! Be sure to join our server before submitting to get matched.</p>
+                    <a class = "icon" href="https://discord.gg/7PxwZfjM" target = "_blank">
+                            <img alt="Discord" src="/static/discord.png"
+                            float: right; width=30% height=30%>
+                    </a>
+                </div>
+                <div class="showcase-form card">
+                    <h2>Join a Team!</h2>
+                    <form action="/submit" method="POST">
+                        <div class="form-control">
+                            <p>Discord Name:
+                                <br />
+                                <input type="text" id="discord-name" name="discord-name" placeholder="JohnDoe#1111" required>
+                            </p>
+                        </div>
+
+                        <div class="form-control">
+                            <p>What's your prefered group size?
+                                <br />
+                                <input type="radio" style="margin:5px;" id="2" name="host" value="2" > 2  
+                                <input type="radio" style="margin:5px;" id="3"name="host" value="3" > 3  
+                                <input type="radio" style="margin:5px;" id="4" name="host" value="4" > 4  
+                            </p>
+                        </div>
+                        
+                            <!--These are the Course input form -->
+                        <div class="form-control">
+                            <p>Select what courses you want to study for!
+                                <br />
+                                <input type="checkbox" id="COP2500" name="courses" value="COP2500" > COP2500
+                                <br />
+                                <input type="checkbox" id="COP3223C" name="courses" value="COP3223C" > COP3223C
+                                <br />
+                                <input type="checkbox" id="CDA3103" name="courses" value="CDA3103" > CDA3103
+                                <br />
+                                <input type="checkbox" id="COP3502C" name="courses" value="COP3502C" > COP3502C
+                                <br />
+                                <input type="checkbox" id="COP3503C" name="courses" value="COP3503C" > COP3503C
+                                <br />
+                                <input type="checkbox" id="COP3330" name="courses" value="COP3330" > COP3330
+                                <br />
+                                <input type="checkbox" id="COP3402" name="courses" value="COP3402" > COP3402
+                                <br />
+                                <input type="checkbox" id="Foundation Exam" name="courses" value="Foundation Exam" > Foundation Exam
+                                <br />
+                                <input type="checkbox" id="COP4331C" name="courses" value="COP4331C" > COP4331C
+                                <br />
+                                <input type="checkbox" id="COT3100" name="courses" value="COT3100" > COT3100
+                                <br />
+                                <input type="checkbox" id="CIS3360" name="courses" value="CIS3360" > CIS3360
+                            </p>
+                        </div>
+                        <input type="submit" value="Send" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="AboutUs-section">
+            <a name="aboutus" ></a>
+            <div class="container grid">
+                <h1>About Us</h1>
+                <p>We're a group of Computer Science Undergraduates looking to help others find a study group made for success. Through studying together for the Foundation Exam 
+                    in the past, we were able to recognize the impact that having a group can have on productivity. For a lot of people it is very difficult to go out and form a group,
+                    especially us CS majors (lol), so let StudyBuddy do it for you. 
+                </p>
+
+            </div>
+        </section>
+
+        <section class="email-section">
+            <a name="contact"></a>
+            <div class="container grid">
+                <h1>Contact Us</h1>
+                <p>Email: nelson_herrera@knights.ucf.edu</p>
+                <p>Phone: 407-729-3909</p>
+                <p>LinkedIn: https://www.linkedin.com/in/nelson-herrera-945b67213/</p>
+            </div>
+            
+        </section>
+        
+    </body>
+</html>
